@@ -1,13 +1,14 @@
-
-img{
+img {
     width: 55px;
     aspect-ratio: 1;
     border-radius: 50%;
     object-fit: cover;
-    object-position: center ;
+    object-position: center;
 }
 
-ul,li, menu{
+ul,
+li,
+menu {
     list-style: none;
 }
 
@@ -38,38 +39,46 @@ ul,li, menu{
 }
 
 /* USER RULES */
-.bg-user{
+.bg-user {
     background-color: #EAEAEA;
 }
 
-.icon-color{
+.icon-color {
     color: #B1B1B1;
 }
 
-.col-4{
+.col-4 {
     margin: 0 -12px;
 }
-.user-profile{
+
+.user-profile {
     height: 70px;
 }
 
 /*NOTIFICATION BAR */
 .notification {
     background-color: #8EDAFC;
-  }
+}
 
-  .bell{
+.bell {
     color: #8EDAFC;
     background-color: white;
     aspect-ratio: 1;
     border-radius: 999px;
-  }
-  .notification-title {
-    font-size: 15px;
-  }
+}
 
-  .notification-subtitle {
+.notification-title {
+    font-size: 15px;
+}
+
+.notification-subtitle {
     font-size: 13px;
     color: grey;
     text-decoration: underline;
-  }
+}
+
+/* CONTACTS RULES*/
+
+.contacts{
+    overflow-y: scroll;
+}
