@@ -1,18 +1,33 @@
-.main.bg{
+
+img{
+    width: 55px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center ;
+}
+
+ul,li, menu{
+    list-style: none;
+}
+
+/* BACKGROUND RULES */
+.main-bg {
     height: 100vh;
 }
 
-.top-bg{
+.top-bg {
     background-color: #009688;
     height: 155px;
 }
 
-.bottom-bg{
+.bottom-bg {
     background-color: #DADBD3;
     height: calc(100vh - 155px);
 }
 
-.container{
+/* CONTAINER RULES*/
+.container {
     position: absolute;
     top: 30px;
     bottom: 30px;
@@ -21,3 +36,40 @@
     margin: auto;
     background-color: white;
 }
+
+/* USER RULES */
+.bg-user{
+    background-color: #EAEAEA;
+}
+
+.icon-color{
+    color: #B1B1B1;
+}
+
+.col-4{
+    margin: 0 -12px;
+}
+.user-profile{
+    height: 70px;
+}
+
+/*NOTIFICATION BAR */
+.notification {
+    background-color: #8EDAFC;
+  }
+
+  .bell{
+    color: #8EDAFC;
+    background-color: white;
+    aspect-ratio: 1;
+    border-radius: 999px;
+  }
+  .notification-title {
+    font-size: 15px;
+  }
+
+  .notification-subtitle {
+    font-size: 13px;
+    color: grey;
+    text-decoration: underline;
+  }

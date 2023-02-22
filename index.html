@@ -6,20 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boolzap</title>
     <link rel="stylesheet" href="./css/app.css">
+    <script src="https://kit.fontawesome.com/113dcf80a9.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 </head>
 <body>
     
-    <div id="app" class="main-bg">
+    <div class="main-bg">
 
         <div class="top-bg"></div>
         <div class="bottom-bg"></div>
 
-        <div class="container">
+        <div id="app" class="container">
+        
+            <div class="row">
+    
+                <aside class="col-4">
+                    
+                    <div class="user-profile py-2 bg-user d-flex justify-content-between align-items-center">
+                        <div>
+                            <img class="ms-2" src="./img/profile-avatar.jpg" alt="">
+                            <span class="ms-2 fw-bold">Morena</span>
+                        </div>
+    
+                        <ul class="d-flex icon-color">
+                            <li class="me-3">
+                                <i class="fa-solid fa-circle-notch"></i>
+                            </li>
+                            <li class="me-3">
+                                <i class="fa-solid fa-message"></i> 
+                            </li>
+                            <li class="me-3">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </li>
+                        </ul>
+                    </div>
 
+                    <div class="notification p-3 d-flex">
+                        <div class="bell">
+                            <i class="fa-solid fa-bell-slash"></i>
+                        </div>
+                        <div class="col-12 mx-3">
+                        <h3 class="notification-title">Ricevi notifiche di nuovi messaggi</h3>
+                        <h4 class="notification-subtitle">Attiva notifiche desktop</h4>
+                        </div>
+
+                    </div>
+                    
+
+                </aside>
+    
+                <main class="col-8">
+    
+                </main>
+            </div>
+            
         </div>
+        
     </div>
 
 
