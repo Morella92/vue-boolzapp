@@ -34,7 +34,6 @@ menu {
     bottom: 30px;
     left: 0;
     right: 0;
-    margin: auto;
     background-color: white;
 }
 
@@ -47,9 +46,11 @@ menu {
     color: #B1B1B1;
 }
 
-.col-4 {
+.col-4, .col-8, .main-row {
     margin: 0 -12px;
+    
 }
+
 
 .user-profile {
     height: 70px;
@@ -60,7 +61,7 @@ menu {
     background-color: #8EDAFC;
 }
 
-.bell {
+.bell{
     color: #8EDAFC;
     background-color: white;
     aspect-ratio: 1;
@@ -81,4 +82,28 @@ menu {
 
 .contacts{
     overflow-y: scroll;
+    height: 400px;
 }
+
+.contact-title{
+
+    font-size: 15px;
+}
+
+.contact-p{
+    font-size: 10px;
+}
+
+/* MAIN CONTENT RULES */
+
+.main-content{
+    height: 458px;
+    background-image: url(../img/mine.jpg);
+    overflow-y: scroll;
+}
+
+.text-bar{
+    background-color: #F3EEEA;
+    height: 70px;
+}
+

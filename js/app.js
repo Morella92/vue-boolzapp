@@ -171,8 +171,9 @@ createApp({
                     ],
                 }
             
-            ]
+            ],
             
+            fixMessage: 'Ultimo messaggio inviato',
         }
     }
 }).mount('#app')

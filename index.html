@@ -14,74 +14,121 @@
 
 </head>
 
-<body>
+<body class="main-bg">
 
-    <div class="main-bg">
+    <div class="top-bg"></div>
+    <div class="bottom-bg"></div>
 
-        <div class="top-bg"></div>
-        <div class="bottom-bg"></div>
+    <div id="app" class="container">
 
-        <div id="app" class="container">
+        <div class="row main-row">
 
-            <div class="row">
+            <aside class="col-4">
 
-                <aside class="col-4">
-
-                    <div class="user-profile py-2 bg-user d-flex justify-content-between align-items-center">
-                        <div>
-                            <img class="ms-2" src="./img/profile-avatar.jpg" alt="">
-                            <span class="ms-2 fw-bold">Morena</span>
-                        </div>
-
-                        <ul class="d-flex icon-color">
-                            <li class="me-3">
-                                <i class="fa-solid fa-circle-notch"></i>
-                            </li>
-                            <li class="me-3">
-                                <i class="fa-solid fa-message"></i>
-                            </li>
-                            <li class="me-3">
-                                <i class="fa-solid fa-ellipsis-vertical"></i>
-                            </li>
-                        </ul>
+                <div class="user-profile py-2 bg-user d-flex justify-content-between align-items-center">
+                    <div>
+                        <img class="ms-2" src="./img/profile-avatar.jpg" alt="">
+                        <span class="ms-2 fw-bold">Morena</span>
                     </div>
 
-                    <div class="notification p-3 d-flex">
-                        <div class="bell">
-                            <i class="fa-solid fa-bell-slash"></i>
-                        </div>
-                        <div class="col-12 mx-3">
-                            <h3 class="notification-title">Ricevi notifiche di nuovi messaggi</h3>
-                            <h4 class="notification-subtitle">Attiva notifiche desktop</h4>
-                        </div>
+                    <ul class="d-flex icon-color">
+                        <li class="me-3">
+                            <i class="fa-solid fa-circle-notch"></i>
+                        </li>
+                        <li class="me-3">
+                            <i class="fa-solid fa-message"></i>
+                        </li>
+                        <li class="me-3">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </li>
+                    </ul>
+                </div>
 
+                <div class="notification p-3 d-flex">
+                    <div class="bell">
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
+                    <div class="col-12 mx-3">
+                        <h3 class="notification-title">Ricevi notifiche di nuovi messaggi</h3>
+                        <h4 class="notification-subtitle">Attiva notifiche desktop</h4>
                     </div>
 
-                    <div class="bg-user">
-                        <div class="input-group flex-nowrap p-1">
-                            <span class="input-group-text" id="addon-wrapping"><i
-                                    class="fa-solid fa-magnifying-glass"></i></span>
-                            <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username"
-                                aria-describedby="addon-wrapping">
-                        </div>
-                    </div>
+                </div>
 
-                    <div class="contancts" v-for="contact in friendContacts">
+                <div class="bg-user">
+                    <div class="input-group flex-nowrap p-1">
+                        <span class="input-group-text" id="addon-wrapping"><i
+                                class="fa-solid fa-magnifying-glass"></i></span>
+                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
+                            aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                </div>
+
+                <div class="contacts">
+                    <div class="d-flex align-items-center py-2 ms-1" v-for="contact in friendContacts">
+
                         <img :src="contact.avatar">
+
+                        <div class="contact-info ms-2">
+                            <h2 class="contact-title">{{ contact.name }}</h2>
+                            <p class="contact-p">{{ fixMessage}}</p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </aside>
+
+            <main class="col-8">
+
+                <div class="user-profile py-2 bg-user d-flex justify-content-between align-items-center">
+
+                    <div class="d-flex align-items-center">
+                        <img class="ms-2" src="./img/avatar-1.jpg" alt="">
+                        <div class="friendProfile">
+                            <h3 class="ms-2 fw-bold fs-6">Michele</h3>
+                            <p class="fs-6">Ultimo accesso alle ore 12:00</p>
+                        </div>
                     </div>
 
-                </aside>
+                    <ul class="d-flex icon-color">
+                        <li class="me-3">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                        <li class="me-3">
+                            <i class="fa-solid fa-paperclip"></i>
+                        </li>
+                        <li class="me-3">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </li>
+                    </ul>
+                </div>
 
-                <main class="col-8">
+                <div class="main-content">
 
-                </main>
-            </div>
+                </div>
 
+                <div class="row text-bar d-flex justify-content-between align-items-center">
+
+                    <div class="col-2 ms-1 icon-color">
+                        <i class="fa-regular fa-face-smile"></i>
+                    </div>
+
+                    <div class="mb-3 col-8">
+                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                    </div>
+
+                    <div class="col-2 icon-color">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
+
+                </div>
+            </main>
         </div>
 
     </div>
-
-
     <script src="./js/app.js"></script>
 </body>
 
