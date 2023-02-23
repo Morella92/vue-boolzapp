@@ -21,11 +21,12 @@
 
     <div id="app" class="container">
 
-        <div class="row main-row">
+        <div class="row">
 
-            <aside class="col-4">
+            <aside class="col-4 d-flex flex-column">
 
-                <div class="user-profile py-2 bg-user d-flex justify-content-between align-items-center">
+                <div class="py-1 bg-user d-flex justify-content-between align-items-center">
+
                     <div>
                         <img class="ms-2" src="./img/profile-avatar.jpg" alt="">
                         <span class="ms-2 fw-bold">Morena</span>
@@ -57,38 +58,38 @@
 
                 <div class="bg-user">
                     <div class="input-group flex-nowrap p-1">
-                        <span class="input-group-text" id="addon-wrapping"><i
-                                class="fa-solid fa-magnifying-glass"></i></span>
+                        <span class="input-group-text" id="addon-wrapping">
+                            <i class="fa-solid fa-magnifying-glass"></i></span>
                         <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
                             aria-label="Username" aria-describedby="addon-wrapping">
                     </div>
                 </div>
 
                 <div class="contacts">
-                    <div class="d-flex align-items-center py-2 ms-1" v-for="contact in friendContacts">
 
+                    <div class="d-flex align-items-center py-2 ms-1" v-for="contact in friendContacts">
+                        
                         <img :src="contact.avatar">
 
                         <div class="contact-info ms-2">
                             <h2 class="contact-title">{{ contact.name }}</h2>
-                            <p class="contact-p">{{ fixMessage}}</p>
+                            <p class="message-p">{{ fixMessage}}</p>
                         </div>
 
                     </div>
                 </div>
 
-
             </aside>
 
-            <main class="col-8">
+            <main class="col-8 d-flex flex-column">
 
-                <div class="user-profile py-2 bg-user d-flex justify-content-between align-items-center">
+                <div class="bg-user d-flex justify-content-between align-items-center">
 
                     <div class="d-flex align-items-center">
                         <img class="ms-2" src="./img/avatar-1.jpg" alt="">
-                        <div class="friendProfile">
-                            <h3 class="ms-2 fw-bold fs-6">Michele</h3>
-                            <p class="fs-6">Ultimo accesso alle ore 12:00</p>
+                        <div class="friendProfile py-1 ms-2">
+                            <h3 class="fw-bold fs-6">Michele</h3>
+                            <p class="message-p">Ultimo accesso alle ore 12:00</p>
                         </div>
                     </div>
 
@@ -105,22 +106,23 @@
                     </ul>
                 </div>
 
-                <div class="main-content">
+                <div class="main-content flex-grow-1">
+
 
                 </div>
 
-                <div class="row text-bar d-flex justify-content-between align-items-center">
+                <div class="text-bar py-2 d-flex justify-content-between align-items-center">
 
-                    <div class="col-2 ms-1 icon-color">
+                    <div class="icon-color mx-2">
                         <i class="fa-regular fa-face-smile"></i>
                     </div>
 
-                    <div class="mb-3 col-8">
+                    <div class="flex-grow-1 mx-2">
                         <input type="email" class="form-control" id="exampleFormControlInput1"
                             placeholder="name@example.com">
                     </div>
 
-                    <div class="col-2 icon-color">
+                    <div class="icon-color mx-2">
                         <i class="fa-solid fa-microphone"></i>
                     </div>
 

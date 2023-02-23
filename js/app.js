@@ -174,6 +174,15 @@ createApp({
             ],
             
             fixMessage: 'Ultimo messaggio inviato',
+
+           
+        }
+    },
+
+    methods: {
+
+        messageSent: function(){
+            
         }
     }
 }).mount('#app')
