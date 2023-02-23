@@ -186,7 +186,10 @@ createApp({
 
     methods: {
 
+        showContact: function(index){
 
+            this.activeContact = index
+        }
         
     }
 }).mount('#app')
