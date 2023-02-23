@@ -179,16 +179,14 @@ createApp({
 
             lastConnection: '12:00',
 
-            
+
             activeContact: 0
         }
     },
 
     methods: {
 
-        showMessage: function(){
 
-            
-        }
+        
     }
 }).mount('#app')

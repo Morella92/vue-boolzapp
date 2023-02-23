@@ -83,7 +83,7 @@ menu {
 
 .message-p{
     font-size: 10px;
-    color: #CBDBEB;
+    color: #95a7b8;
 }
 
 .bg-user .message-p{
@@ -117,7 +117,7 @@ menu {
     position: absolute;
     bottom: 4px;
     right: 4px;
-    color: #95a7b8;;
+    color: #95a7b8;
 }
 
 .sent{
@@ -135,3 +135,10 @@ menu {
 
 }
 
+.active{
+    display: block;
+}
+
+.not-visible{
+    display: none;
+}
