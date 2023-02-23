@@ -1,9 +1,10 @@
 img {
     width: 55px;
-    aspect-ratio: 1;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     object-fit: cover;
     object-position: center;
+    display: block;
 }
 
 ul,
@@ -44,6 +45,7 @@ menu {
 
 .icon-color {
     color: #B1B1B1;
+    font-size: 20px;
 }
 
 .col-4, .col-8{
@@ -59,8 +61,10 @@ menu {
 .bell{
     color: #8EDAFC;
     background-color: white;
-    aspect-ratio: 1;
+    width: 60px;
+    aspect-ratio: 1/1;
     border-radius: 999px;
+    font-size: 20px;
 }
 
 .notification-title {
@@ -77,7 +81,7 @@ menu {
 
 .contacts{
     overflow-y: scroll;
-    height: 406px;
+    /* height: 406px; */
 }
 
 .contact-title{
@@ -87,6 +91,12 @@ menu {
 
 .message-p{
     font-size: 10px;
+    color: #CBDBEB;
+}
+
+.bg-user .message-p{
+    font-size: 10px;
+    color: black;
 }
 
 /* MAIN CONTENT RULES */
@@ -95,6 +105,37 @@ menu {
     
     background-image: url(../img/mine.jpg);
     overflow-y: scroll;
+}
+
+.chat{
+
+    padding: 50px 80px;
+}
+
+.message{
+    position: relative;
+    font-size: 15px;
+    border-radius: 15px;
+    padding: 15px 25px;
+    max-width: 70%;
+}
+
+.time{
+    font-size: 10px;
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    color: #CBDBEB;;
+}
+
+.sent-message{
+    background-color: #D5F9BA;
+    align-self: flex-end;
+}
+
+.received-message{
+    background-color: white;
+    align-self: flex-start;
 }
 
 .text-bar{
