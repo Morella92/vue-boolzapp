@@ -177,13 +177,18 @@ createApp({
 
             fixMessage: 'Ultimo messaggio inviato',
 
-            lastConnection: '12:00'
+            lastConnection: '12:00',
 
+            
+            activeContact: 0
         }
     },
 
     methods: {
 
-        
+        showMessage: function(){
+
+            
+        }
     }
 }).mount('#app')
