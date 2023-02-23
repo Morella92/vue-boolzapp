@@ -1,6 +1,6 @@
 const { createApp } = Vue
 
-const contacts=[
+const contacts = [
 
     {
         name: 'Michele',
@@ -187,20 +187,38 @@ createApp({
 
     methods: {
 
-        showContact: function(index){
+        showContact: function (index) {
 
             this.activeContact = index
         },
-        
-        newMessage: function(){
+
+        newMessage: function () {
 
             const digitedMessage = this.userMessage
 
+            this.friendContacts[this.activeContact].messages.push({
+
+                date: 'now',
+                message: digitedMessage,
+                status: 'sent',
+
+            })
+
+            setTimeout(() =>{
+
+                this.friendContacts[this.activeContact].messages.push({
+
+                    date: 'now',
+                    message: 'Ok',
+                    status: 'received',
+    
+                })
+
+            }, 1000)
+
             this.userMessage = ''
 
-           
-        }
-
+        },
 
     }
 }).mount('#app')

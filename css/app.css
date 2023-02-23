@@ -76,6 +76,10 @@ menu {
     background-color: white;
 }
 
+.contacts-item:hover,
+.contacts-item.active {
+	background-color: #e9ebeb;
+}
 .contact-title{
 
     font-size: 15px;
