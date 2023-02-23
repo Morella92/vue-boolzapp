@@ -179,8 +179,9 @@ createApp({
 
             lastConnection: '12:00',
 
+            activeContact: 0,
 
-            activeContact: 0
+            userMessage: ''
         }
     },
 
@@ -189,7 +190,17 @@ createApp({
         showContact: function(index){
 
             this.activeContact = index
-        }
+        },
         
+        newMessage: function(){
+
+            const digitedMessage = this.userMessage
+
+            this.userMessage = ''
+
+           
+        }
+
+
     }
 }).mount('#app')

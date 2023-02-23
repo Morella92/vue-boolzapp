@@ -17,7 +17,7 @@
 <body class="main-bg">
 
     <div class="top-bg"></div>
-    
+
 
     <div id="app" class="container">
 
@@ -67,9 +67,8 @@
 
                 <div class="contacts">
                     <!-- Ciclo tutti i contatti nella lista -->
-                    <div class="d-flex align-items-center border-top py-2 ms-1" 
-                        v-for="(contact, index) in friendContacts" :key="index"
-                        @click="showContact(index)">
+                    <div class="d-flex align-items-center border-top py-2 ms-1"
+                        v-for="(contact, index) in friendContacts" :key="index" @click="showContact(index)">
 
                         <img :src="contact.avatar">
 
@@ -88,8 +87,8 @@
                 <div class="bg-user d-flex justify-content-between align-items-center">
 
                     <div class="d-flex align-items-center">
-                        
-                        <img class="ms-2" :src="friendContacts[activeContact].avatar" >
+
+                        <img class="ms-2" :src="friendContacts[activeContact].avatar">
                         <div class="friendProfile py-1 ms-2">
                             <h3 class="fw-bold fs-6">{{friendContacts[activeContact].name}}</h3>
                             <p class="message-p">Ultimo accesso alle ore 12:00</p>
@@ -112,12 +111,13 @@
                 <div class="main-content flex-grow-1">
 
                     <ul class="chat d-flex flex-column gap-2">
-                        <li v-for="(element, index) in friendContacts[activeContact].messages" :key="index" class="message sent"
-                        :class="friendContacts[activeContact].messages[index].status === 'sent' ? 'sent' : 'received'">
-                           {{friendContacts[activeContact].messages[index].message}}
-                           <span class="time">
-                            {{friendContacts[activeContact].messages[index].date}}
-                           </span> 
+                        <li v-for="(element, index) in friendContacts[activeContact].messages" :key="index"
+                            class="message sent"
+                            :class="friendContacts[activeContact].messages[index].status === 'sent' ? 'sent' : 'received'">
+                            {{friendContacts[activeContact].messages[index].message}}
+                            <span class="time">
+                                {{friendContacts[activeContact].messages[index].date}}
+                            </span>
                         </li>
                         <!-- <li class="message sent-message">
                             Ricordati di stendere i panni.
@@ -132,7 +132,7 @@
                             </span>
                         </li> -->
                     </ul>
-            
+
 
                 </div>
 
@@ -143,8 +143,9 @@
                     </div>
 
                     <div class="flex-grow-1 mx-2">
-                        <input type="email" class="form-control" id="exampleFormControlInput1"
-                            placeholder="Nuovo messaggio...">
+                        <input v-model="userMessage" 
+                            @keyup.enter="newMessage" type="email" class="form-control"
+                            id="exampleFormControlInput1" placeholder="Nuovo messaggio...">
                     </div>
 
                     <div class="icon-color mx-2">
