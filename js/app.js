@@ -190,7 +190,9 @@ createApp({
 
             activeContactIndex: 0,
 
-            userMessage: ''
+            userMessage: '',
+
+            filteredContact: ''
         }
     },
 
@@ -203,7 +205,11 @@ createApp({
 
         newMessage: function () {
 
-            const digitedMessage = this.userMessage
+            const digitedMessage = this.userMessage.trim()
+
+            if(digitedMessage === ''){
+                return
+            }
 
             this.friendContacts[this.activeContactIndex].messages.push({
 
@@ -212,6 +218,7 @@ createApp({
                 status: 'sent',
 
             })
+
 
             setTimeout(() => {
 
@@ -229,11 +236,11 @@ createApp({
 
         },
 
-        getFilteredContact: function (query) {
+        getFilteredContact: function () {
 
             return this.friendContacts.filter((el) =>
 
-                el.name.toLowerCase().indexOf(query.toLowerCase()) > - 1)
+                el.name.toLowerCase().indexOf(this.filteredContact.toLowerCase()) > - 1)
 
         }
 
