@@ -61,7 +61,7 @@
                     <div class="input-group flex-nowrap p-1">
                         <span class="input-group-text" id="addon-wrapping">
                             <i class="fa-solid fa-magnifying-glass"></i></span>
-                        <input v-model="getFilteredContact" type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
+                        <input v-model="getFilteredContact(filteredContact)" type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
                             aria-label="Username" aria-describedby="addon-wrapping">
                     </div>
                 </div>
@@ -92,7 +92,7 @@
                         <img class="ms-2" :src="friendContacts[activeContactIndex].avatar">
                         <div class="friendProfile py-1 ms-2">
                             <h3 class="fw-bold fs-6">{{friendContacts[activeContactIndex].name}}</h3>
-                            <p class="message-p">Ultimo accesso alle ore 12:00</p>
+                            <p class="message-p">Ultimo accesso alle 12:00</p>
                         </div>
                     </div>
 

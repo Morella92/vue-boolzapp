@@ -169,13 +169,14 @@ const contacts = [
 
 ]
 
-// const DateTime = luxon.DateTime
+const DateTime = luxon.DateTime
 
-// const now = DateTime.now()
+const now = DateTime.now()
+console.log(now)
 
-// const dateToParse = '10/01/2020 15:30:55'
+const formattedDate = now.toFormat('HH:mm')
+console.log(formattedDate)
 
-// const parsedDate = DateTime.fromFormat(dateToParse, 'dd/LL/yyyy HH:mm:ss')
 
 
 createApp({
@@ -186,7 +187,7 @@ createApp({
 
             fixMessage: 'Ultimo messaggio inviato',
 
-            lastConnection: '12:00',
+            lastConnection: formattedDate,
 
             activeContactIndex: 0,
 
@@ -213,18 +214,17 @@ createApp({
 
             this.friendContacts[this.activeContactIndex].messages.push({
 
-                date: 'now',
+                date: formattedDate,
                 message: digitedMessage,
                 status: 'sent',
 
             })
 
-
             setTimeout(() => {
 
                 this.friendContacts[this.activeContactIndex].messages.push({
 
-                    date: 'now',
+                    date: formattedDate,
                     message: 'Ok',
                     status: 'received',
 
@@ -238,10 +238,12 @@ createApp({
 
         getFilteredContact: function () {
 
-            return this.friendContacts.filter((el) =>
+            return this.friendContacts.filter(el =>{
 
-                el.name.toLowerCase().indexOf(this.filteredContact.toLowerCase()) > - 1)
+                return el.name.toLowerCase().includes(this.filteredContact.toLowerCase())
+            })
 
+               
         }
 
     }
