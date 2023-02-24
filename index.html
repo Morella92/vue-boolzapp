@@ -10,6 +10,7 @@
     <script src="https://kit.fontawesome.com/113dcf80a9.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 </head>
@@ -60,7 +61,7 @@
                     <div class="input-group flex-nowrap p-1">
                         <span class="input-group-text" id="addon-wrapping">
                             <i class="fa-solid fa-magnifying-glass"></i></span>
-                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
+                        <input v-model="getFilteredContact(query)" type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
                             aria-label="Username" aria-describedby="addon-wrapping">
                     </div>
                 </div>
@@ -88,9 +89,9 @@
 
                     <div class="d-flex align-items-center">
 
-                        <img class="ms-2" :src="friendContacts[activeContact].avatar">
+                        <img class="ms-2" :src="friendContacts[activeContactIndex].avatar">
                         <div class="friendProfile py-1 ms-2">
-                            <h3 class="fw-bold fs-6">{{friendContacts[activeContact].name}}</h3>
+                            <h3 class="fw-bold fs-6">{{friendContacts[activeContactIndex].name}}</h3>
                             <p class="message-p">Ultimo accesso alle ore 12:00</p>
                         </div>
                     </div>
@@ -111,26 +112,18 @@
                 <div class="main-content flex-grow-1">
 
                     <ul class="chat d-flex flex-column gap-2">
-                        <li v-for="(element, index) in friendContacts[activeContact].messages" :key="index"
-                            class="message sent"
-                            :class="friendContacts[activeContact].messages[index].status === 'sent' ? 'sent' : 'received'">
-                            {{friendContacts[activeContact].messages[index].message}}
+                        <li v-for="(element, index) in friendContacts[activeContactIndex].messages" :key="index"
+                            class="message"
+                            :class="friendContacts[activeContactIndex].messages[index].status === 'sent' ? 'sent' : 'received'">
+                            {{friendContacts[activeContactIndex].messages[index].message}}
                             <span class="time">
-                                {{friendContacts[activeContact].messages[index].date}}
+                                {{friendContacts[activeContactIndex].messages[index].date}}
                             </span>
                         </li>
-                        <!-- <li class="message sent-message">
-                            Ricordati di stendere i panni.
-                            <span class="time">
-                                15:37
-                            </span>
-                        </li>
-                        <li class="message received-message">
-                            Tutto fatto!
-                            <span class="time">
-                                15:45
-                            </span>
-                        </li> -->
+
+                        <!-- friendContacts[activeContactIndex].messages[index]
+                            tutto questo poteva essere abbreviato direttamente
+                            con element -->
                     </ul>
 
 
@@ -143,11 +136,8 @@
                     </div>
 
                     <div class="flex-grow-1 mx-2">
-                        <input v-model="userMessage" 
-                            @keyup.enter="newMessage" type="email" class="form-control"
+                        <input v-model="userMessage" @keyup.enter="newMessage" type="email" class="form-control"
                             id="exampleFormControlInput1" placeholder="Nuovo messaggio...">
-                            
-                            
                     </div>
 
                     <div class="icon-color mx-2">

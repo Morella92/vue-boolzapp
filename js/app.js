@@ -169,6 +169,15 @@ const contacts = [
 
 ]
 
+// const DateTime = luxon.DateTime
+
+// const now = DateTime.now()
+
+// const dateToParse = '10/01/2020 15:30:55'
+
+// const parsedDate = DateTime.fromFormat(dateToParse, 'dd/LL/yyyy HH:mm:ss')
+
+
 createApp({
     data() {
         return {
@@ -179,7 +188,7 @@ createApp({
 
             lastConnection: '12:00',
 
-            activeContact: 0,
+            activeContactIndex: 0,
 
             userMessage: ''
         }
@@ -189,14 +198,14 @@ createApp({
 
         showContact: function (index) {
 
-            this.activeContact = index
+            this.activeContactIndex = index
         },
 
         newMessage: function () {
 
             const digitedMessage = this.userMessage
 
-            this.friendContacts[this.activeContact].messages.push({
+            this.friendContacts[this.activeContactIndex].messages.push({
 
                 date: 'now',
                 message: digitedMessage,
@@ -204,14 +213,14 @@ createApp({
 
             })
 
-            setTimeout(() =>{
+            setTimeout(() => {
 
-                this.friendContacts[this.activeContact].messages.push({
+                this.friendContacts[this.activeContactIndex].messages.push({
 
                     date: 'now',
                     message: 'Ok',
                     status: 'received',
-    
+
                 })
 
             }, 1000)
@@ -220,5 +229,13 @@ createApp({
 
         },
 
+        getFilteredContact: function (query) {
+
+            return this.friendContacts.filter((el) =>
+
+                el.name.toLowerCase().indexOf(query.toLowerCase()) > - 1)
+
+        }
+
     }
-}).mount('#app')
+}).mount('#app') 
